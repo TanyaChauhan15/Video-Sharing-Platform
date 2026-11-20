@@ -1,0 +1,3 @@
+from django.urls import path
+from . import views as v
+urlpatterns=[path('videos/',v.VideoList.as_view()),path('videos/upload/',v.UploadVideo.as_view()),path('videos/search/',v.SearchVideos.as_view()),path('videos/my-videos/',v.MyVideos.as_view()),path('videos/<int:pk>/',v.VideoDetail.as_view()),path('videos/<int:pk>/view/',v.record_view),path('videos/<int:pk>/comments/',v.Comments.as_view()),path('comments/<int:pk>/',v.DeleteComment.as_view()),path('videos/<int:pk>/like/',v.toggle_like),path('watch-later/',v.SavedVideos.as_view()),path('watch-later/add/',v.save_video),path('watch-later/<int:pk>/',v.RemoveSaved.as_view()),path('categories/',v.Categories.as_view()),path('categories/<int:pk>/videos/',v.CategoryVideos.as_view())]
